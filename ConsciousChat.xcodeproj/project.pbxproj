@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30AA5A29250947A100DBCD81 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA5A28250947A100DBCD81 /* GreetingViewController.swift */; };
+		30AA5A2E2509485F00DBCD81 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA5A2D2509485F00DBCD81 /* RegisterViewController.swift */; };
+		30AA5A302509489300DBCD81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA5A2F2509489300DBCD81 /* LoginViewController.swift */; };
+		30AA5A32250948A000DBCD81 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA5A31250948A000DBCD81 /* ChatViewController.swift */; };
 		30DA053525093C37004682FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA053425093C37004682FB /* AppDelegate.swift */; };
 		30DA053725093C37004682FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA053625093C37004682FB /* SceneDelegate.swift */; };
-		30DA053925093C37004682FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA053825093C37004682FB /* ViewController.swift */; };
 		30DA053C25093C37004682FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30DA053A25093C37004682FB /* Main.storyboard */; };
 		30DA053E25093C3A004682FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DA053D25093C3A004682FB /* Assets.xcassets */; };
 		30DA054125093C3A004682FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30DA053F25093C3A004682FB /* LaunchScreen.storyboard */; };
+		3980039D16F3FEB2257AB3DE /* Pods_ConsciousChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1736FC2D42846DB246B974A7 /* Pods_ConsciousChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1736FC2D42846DB246B974A7 /* Pods_ConsciousChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConsciousChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30AA5A28250947A100DBCD81 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
+		30AA5A2D2509485F00DBCD81 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		30AA5A2F2509489300DBCD81 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		30AA5A31250948A000DBCD81 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		30DA053125093C37004682FB /* ConsciousChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsciousChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30DA053425093C37004682FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30DA053625093C37004682FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		30DA053825093C37004682FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		30DA053B25093C37004682FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30DA053D25093C3A004682FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30DA054025093C3A004682FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30DA054225093C3A004682FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4657F29B34FF929997AC8AD1 /* Pods-ConsciousChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsciousChat.release.xcconfig"; path = "Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat.release.xcconfig"; sourceTree = "<group>"; };
+		6ECDDA92B4CB8025FBE086F1 /* Pods-ConsciousChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsciousChat.debug.xcconfig"; path = "Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3980039D16F3FEB2257AB3DE /* Pods_ConsciousChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30AA5A2C250947DE00DBCD81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30AA5A28250947A100DBCD81 /* GreetingViewController.swift */,
+				30AA5A2D2509485F00DBCD81 /* RegisterViewController.swift */,
+				30AA5A2F2509489300DBCD81 /* LoginViewController.swift */,
+				30AA5A31250948A000DBCD81 /* ChatViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		30DA052825093C37004682FB = {
 			isa = PBXGroup;
 			children = (
 				30DA053325093C37004682FB /* ConsciousChat */,
 				30DA053225093C37004682FB /* Products */,
+				AEBA8E3A73637A491D696DA0 /* Pods */,
+				B9D6425EA3CAD9CAECC540EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +82,31 @@
 			children = (
 				30DA053425093C37004682FB /* AppDelegate.swift */,
 				30DA053625093C37004682FB /* SceneDelegate.swift */,
-				30DA053825093C37004682FB /* ViewController.swift */,
+				30AA5A2C250947DE00DBCD81 /* Views */,
 				30DA053A25093C37004682FB /* Main.storyboard */,
 				30DA053D25093C3A004682FB /* Assets.xcassets */,
 				30DA053F25093C3A004682FB /* LaunchScreen.storyboard */,
 				30DA054225093C3A004682FB /* Info.plist */,
 			);
 			path = ConsciousChat;
+			sourceTree = "<group>";
+		};
+		AEBA8E3A73637A491D696DA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6ECDDA92B4CB8025FBE086F1 /* Pods-ConsciousChat.debug.xcconfig */,
+				4657F29B34FF929997AC8AD1 /* Pods-ConsciousChat.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B9D6425EA3CAD9CAECC540EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1736FC2D42846DB246B974A7 /* Pods_ConsciousChat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30DA054525093C3A004682FB /* Build configuration list for PBXNativeTarget "ConsciousChat" */;
 			buildPhases = (
+				A12620912A4D3DA043A229FC /* [CP] Check Pods Manifest.lock */,
 				30DA052D25093C37004682FB /* Sources */,
 				30DA052E25093C37004682FB /* Frameworks */,
 				30DA052F25093C37004682FB /* Resources */,
+				B82F4FCE67637DD18BDA91AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +177,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A12620912A4D3DA043A229FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConsciousChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B82F4FCE67637DD18BDA91AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30DA052D25093C37004682FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30DA053925093C37004682FB /* ViewController.swift in Sources */,
 				30DA053525093C37004682FB /* AppDelegate.swift in Sources */,
 				30DA053725093C37004682FB /* SceneDelegate.swift in Sources */,
+				30AA5A29250947A100DBCD81 /* GreetingViewController.swift in Sources */,
+				30AA5A302509489300DBCD81 /* LoginViewController.swift in Sources */,
+				30AA5A32250948A000DBCD81 /* ChatViewController.swift in Sources */,
+				30AA5A2E2509485F00DBCD81 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +371,7 @@
 		};
 		30DA054625093C3A004682FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ECDDA92B4CB8025FBE086F1 /* Pods-ConsciousChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +390,7 @@
 		};
 		30DA054725093C3A004682FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4657F29B34FF929997AC8AD1 /* Pods-ConsciousChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
