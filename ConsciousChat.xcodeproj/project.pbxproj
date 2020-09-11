@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3047551B2509883C0051E40C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3047551A2509883B0051E40C /* GoogleService-Info.plist */; };
 		30AA5A29250947A100DBCD81 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA5A28250947A100DBCD81 /* GreetingViewController.swift */; };
 		30AA5A2E2509485F00DBCD81 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA5A2D2509485F00DBCD81 /* RegisterViewController.swift */; };
 		30AA5A302509489300DBCD81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA5A2F2509489300DBCD81 /* LoginViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1736FC2D42846DB246B974A7 /* Pods_ConsciousChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConsciousChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3047551A2509883B0051E40C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30AA5A28250947A100DBCD81 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		30AA5A2D2509485F00DBCD81 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		30AA5A2F2509489300DBCD81 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				30DA053A25093C37004682FB /* Main.storyboard */,
 				30DA053D25093C3A004682FB /* Assets.xcassets */,
 				30DA053F25093C3A004682FB /* LaunchScreen.storyboard */,
+				3047551A2509883B0051E40C /* GoogleService-Info.plist */,
 				30DA054225093C3A004682FB /* Info.plist */,
 			);
 			path = ConsciousChat;
@@ -97,7 +100,6 @@
 				6ECDDA92B4CB8025FBE086F1 /* Pods-ConsciousChat.debug.xcconfig */,
 				4657F29B34FF929997AC8AD1 /* Pods-ConsciousChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -120,7 +122,7 @@
 				30DA052D25093C37004682FB /* Sources */,
 				30DA052E25093C37004682FB /* Frameworks */,
 				30DA052F25093C37004682FB /* Resources */,
-				B82F4FCE67637DD18BDA91AC /* [CP] Embed Pods Frameworks */,
+				8B1A2405384440E58A93E688 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30DA054125093C3A004682FB /* LaunchScreen.storyboard in Resources */,
+				3047551B2509883C0051E40C /* GoogleService-Info.plist in Resources */,
 				30DA053E25093C3A004682FB /* Assets.xcassets in Resources */,
 				30DA053C25093C37004682FB /* Main.storyboard in Resources */,
 			);
@@ -178,6 +181,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8B1A2405384440E58A93E688 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A12620912A4D3DA043A229FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,23 +218,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B82F4FCE67637DD18BDA91AC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConsciousChat/Pods-ConsciousChat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
