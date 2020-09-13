@@ -21,6 +21,13 @@ struct K {
   let brandColor = Color(red: 128.0 / 255.0, green: 222.0 / 255.0, blue: 234.0 / 255.0)
   let brandColorDark = Color(red: 75.0 / 255.0, green: 172.0 / 255.0, blue: 184.0 / 255.0)
   
+  struct FStore {
+    static let collectionName = "messages"
+    static let senderField = "sender"
+    static let bodyField = "body"
+    static let dateField = "date"
+  }
+  
   
   
 }
