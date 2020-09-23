@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftUI
 
 class ChatViewController: UIViewController, UITextFieldDelegate {
   
@@ -136,9 +137,31 @@ extension ChatViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let message = messages[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
       as! MessageCell
     cell.label.text = messages[indexPath.row].body
+    
+    // Message from Current Logged In user
+    if message.sender == Auth.auth().currentUser?.email {
+      cell.leftImageView.isHidden = true
+      cell.rightImageView.isHidden = false
+      cell.messageBubble.backgroundColor = UIColor.lightBrandColor
+      cell.label.textColor = UIColor.darkText
+    }
+    
+    // Mwssage from User not currently logged in
+    else {
+      cell.leftImageView.isHidden = false
+      cell.rightImageView.isHidden = true
+      cell.messageBubble.backgroundColor = UIColor.brandColorDark
+      cell.label.textColor = UIColor.white 
+    }
+    
+    
+    
+    
+    
     return cell
   }
   
@@ -157,3 +180,11 @@ extension ChatViewController: UITableViewDelegate {
 
   
 }
+
+struct ChatViewController_Previews: PreviewProvider {
+  static var previews: some View {
+    /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+  }
+}
+
+
