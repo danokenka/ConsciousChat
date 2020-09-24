@@ -44,70 +44,89 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
   }
   
   func loadMessages() {
-
+    
     db.collection(K.FStore.collectionName)
       .order(by: K.FStore.dateField)
       .addSnapshotListener { (querySnapshot, error) in
         
-      self.messages = []
+        self.messages = []
         
-      if let e = error {
-            print("There was an issue retrieving data from Firestore. \(e)")
-      } else {
-        if let snapshotDocuments = querySnapshot?.documents {
-          for doc in snapshotDocuments {
-           let data = doc.data()
-            if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
-              let newMessage = Message(sender: messageSender, body: messageBody)
-              self.messages.append(newMessage)
-              
-              DispatchQueue.main.async {
-                self.tableView.reloadData()
+        if let e = error {
+          print("There was an issue retrieving data from Firestore. \(e)")
+        } else {
+          if let snapshotDocuments = querySnapshot?.documents {
+            for doc in snapshotDocuments {
+              let data = doc.data()
+              if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
+                let newMessage = Message(sender: messageSender, body: messageBody)
+                self.messages.append(newMessage)
+                
+                DispatchQueue.main.async {
+                  self.tableView.reloadData()
+                  let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                  self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                }
+                
               }
-              
             }
           }
         }
-      }
-    
-//    db.collection(K.FStore.collectionName).getDocuments { (querySnapshot, error) in
-//      if let e = error {
-//            print("THere was an issue retrieving data from Firestore. \(e)")
-//      } else {
-//        if let snapshotDocuments = querySnapshot?.documents {
-//          for doc in snapshotDocuments {
-//           let data = doc.data()
-//            if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
-//              let newMessage = Message(sender: messageSender, body: messageBody)
-//              self.messages.append(newMessage)
-//
-//              DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//              }
-//
-//            }
-//          }
-//        }
-//      }
-  
+        
+        //    db.collection(K.FStore.collectionName).getDocuments { (querySnapshot, error) in
+        //      if let e = error {
+        //            print("THere was an issue retrieving data from Firestore. \(e)")
+        //      } else {
+        //        if let snapshotDocuments = querySnapshot?.documents {
+        //          for doc in snapshotDocuments {
+        //           let data = doc.data()
+        //            if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
+        //              let newMessage = Message(sender: messageSender, body: messageBody)
+        //              self.messages.append(newMessage)
+        //
+        //              DispatchQueue.main.async {
+        //                self.tableView.reloadData()
+        //              }
+        //
+        //            }
+        //          }
+        //        }
+        //      }
+        
     }
   }
   
-
+  
   @IBAction func sendPressed(_ sender: UIButton) {
-    if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
-      db.collection(K.FStore.collectionName).addDocument(data: [
-        K.FStore.senderField: messageSender,
-        K.FStore.bodyField: messageBody,
-        K.FStore.dateField: Date().timeIntervalSince1970
-      ]) { (error) in
+    // makes sure to not send empty data as a message
+    if messageTextfield.text != "" {
+      if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
+        db.collection(K.FStore.collectionName).addDocument(data: [
+          K.FStore.senderField: messageSender,
+          K.FStore.bodyField: messageBody,
+          K.FStore.dateField: Date().timeIntervalSince1970
+        ]) { (error) in
           if let e = error {
             print("There was an issue saving data to firestore, \(e)")
           } else {
             print("Successfully saved data.")
+            
+            DispatchQueue.main.async {
+              self.messageTextfield.text = ""
+            }
+            
           }
+        }
       }
+    } else {
+      print("empty string not being sent")
+       let alert = UIAlertController(title: "Empty Message", message: "Please type a message then press send", preferredStyle: .alert)
+
+                          alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+      //                  alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+                        self.present(alert, animated: true)
     }
+    
   }
   
   @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
@@ -149,8 +168,8 @@ extension ChatViewController: UITableViewDataSource {
       cell.messageBubble.backgroundColor = UIColor.lightBrandColor
       cell.label.textColor = UIColor.darkText
     }
-    
-    // Mwssage from User not currently logged in
+      
+      // Mwssage from User not currently logged in
     else {
       cell.leftImageView.isHidden = false
       cell.rightImageView.isHidden = true
@@ -170,14 +189,14 @@ extension ChatViewController: UITableViewDataSource {
 
 extension ChatViewController: UITableViewDelegate {
   
-//  // REALLY Helpful Prints index path to console
-//  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//      print(indexPath.row)
-//  }
+  //  // REALLY Helpful Prints index path to console
+  //  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  //      print(indexPath.row)
+  //  }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      print(indexPath.row)
+    print(indexPath.row)
   }
-
+  
   
 }
 
